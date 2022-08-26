@@ -1,17 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import  express  from 'express';
+import cors from 'cors'
+import functions from 'firebase-functions';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const app = express()
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+app.use(cors())
+app.use(express.json())
+
+app.get('/'user1, getUser1);
+app.post('/user2', getUser2);
+
+
+
+const port = 3040
+app.use(express.json())
+
+export const api = function.https.onRequest(app)
